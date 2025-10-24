@@ -137,6 +137,7 @@
       <option value="california">California</option>
       <option value="indiana">Indiana</option>
       <option value="florida">Florida</option>
+      <option value="florida_pathogen">Florida Pathogen</option>
     </select>
     <div class="layer-count" id="stateInfo"></div>
   </div>
@@ -156,14 +157,14 @@
 <script>
 // ========================================
 // CONFIGURATION
-// Replace 'ITEM_ID_HERE' with actual ArcGIS item IDs
+// Replace ITEM_ID_HERE with your actual ArcGIS item IDs
 // ========================================
 
 const dataMapping = {
   california: [
     {
       name: 'Grazing Operations CA',
-      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/991415582081448e9ebf141f48ef4426/data'
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     },
     {
       name: 'Composting Facilities CA',
@@ -180,36 +181,148 @@ const dataMapping = {
     {
       name: 'Farm Boundary CA',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Crop Types CA',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     }
-    // Add more California layers here
   ],
   
   indiana: [
     {
-      name: 'Indiana',
+      name: 'Indiana CAFO',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     },
     {
-      name: 'Indiana Boundary',
+      name: 'Indiana CAFO Sheds',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'County Boundaries IN',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farm Boundaries IN',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Crop Types IN',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     }
-    // Add more Indiana layers here
   ],
   
   florida: [
     {
-      name: 'Florida',
+      name: 'Florida CAFO',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     },
     {
-      name: 'Florida Pathogen',
+      name: 'Florida CAFO Shades',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     },
     {
-      name: 'Florida Boundary',
+      name: 'Florida Watershed',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'County Boundaries FL',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farm Boundaries FL',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Crop Types FL',
       url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
     }
-    // Add more Florida layers here
+  ],
+  
+  florida_pathogen: [
+    {
+      name: 'CAFO Buffers',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Septic Buffers',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen CAFO Points With Strength Output',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Contamination Pathways',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farm Buffers',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farm Hotspots',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farms With Risk Scores',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Stream Network Lines',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Wastewater Buffers',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Priority Farm Monitoring',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Priority Threshold',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Priority Top10 Cropland',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida AOI Boundary',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen CAFO Points Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen Drinking Water Points Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen FARMS Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen FARMS Points Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen Septic Systems Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen Wastewater Facilities Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen Water Network Input',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida CAFO',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    }
   ]
 };
 
