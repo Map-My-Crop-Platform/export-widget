@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Export Data</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    padding: 20px;
+    background: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  
+  h2 {
+    color: #2e2e2e;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .info-box {
+    padding: 12px 15px;
+    background: #e8f4f8;
+    border-left: 4px solid #0079C1;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #2e2e2e;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2e2e2e;
+    font-size: 14px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 2px solid #d1d1d1;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2e2e2e;
+  }
+  
+  select:hover:not(:disabled) {
+    border-color: #0079C1;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #0079C1;
+    box-shadow: 0 0 0 3px rgba(0, 121, 193, 0.1);
+  }
+  
+  select:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    color: #999;
+    border-color: #e0e0e0;
+  }
+  
+  .btn-download {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #0079C1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .btn-download:hover:not(:disabled) {
+    background: #005a8f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 121, 193, 0.3);
+  }
+  
+  .btn-download:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  .btn-download:disabled {
+    background: #d1d1d1;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .layer-count {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Export Data</h2>
+  
+  <div class="info-box">
+    Select a state and layer to download the corresponding CSV data
+  </div>
+
+  <div class="form-group">
+    <label for="stateSelect">State</label>
+    <select id="stateSelect" onchange="updateLayers()">
+      <option value="">-- Select a State --</option>
+      <option value="california">California</option>
+      <option value="indiana">Indiana</option>
+      <option value="florida">Florida</option>
+    </select>
+    <div class="layer-count" id="stateInfo"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="layerSelect">Layer</label>
+    <select id="layerSelect" disabled onchange="enableDownload()">
+      <option value="">-- Select a state first --</option>
+    </select>
+  </div>
+
+  <button id="downloadBtn" class="btn-download" onclick="downloadCSV()" disabled>
+    Download CSV
+  </button>
+</div>
+
+<script>
+// ========================================
+// CONFIGURATION
+// Replace 'ITEM_ID_HERE' with actual ArcGIS item IDs
+// ========================================
+
+const dataMapping = {
+  california: [
+    {
+      name: 'Grazing Operations CA',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/991415582081448e9ebf141f48ef4426/data'
+    },
+    {
+      name: 'Composting Facilities CA',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Watersheds CA HUC8',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'County Boundaries CA',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Farm Boundary CA',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    }
+    // Add more California layers here
+  ],
+  
+  indiana: [
+    {
+      name: 'Indiana',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Indiana Boundary',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    }
+    // Add more Indiana layers here
+  ],
+  
+  florida: [
+    {
+      name: 'Florida',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Pathogen',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    },
+    {
+      name: 'Florida Boundary',
+      url: 'https://hardcastleagrote.maps.arcgis.com/sharing/rest/content/items/ITEM_ID_HERE/data'
+    }
+    // Add more Florida layers here
+  ]
+};
+
+// ========================================
+// FUNCTIONS
+// ========================================
+
+function updateLayers() {
+  const stateSelect = document.getElementById('stateSelect');
+  const layerSelect = document.getElementById('layerSelect');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const stateInfo = document.getElementById('stateInfo');
+  
+  const selectedState = stateSelect.value;
+  
+  // Reset
+  layerSelect.innerHTML = '<option value="">-- Select a layer --</option>';
+  layerSelect.disabled = true;
+  downloadBtn.disabled = true;
+  stateInfo.textContent = '';
+  
+  if (selectedState && dataMapping[selectedState]) {
+    const layers = dataMapping[selectedState];
+    
+    // Add layers to dropdown
+    layers.forEach((layer, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = layer.name;
+      layerSelect.appendChild(option);
+    });
+    
+    layerSelect.disabled = false;
+    stateInfo.textContent = `${layers.length} layer${layers.length !== 1 ? 's' : ''} available`;
+  }
+}
+
+function enableDownload() {
+  const layerSelect = document.getElementById('layerSelect');
+  const downloadBtn = document.getElementById('downloadBtn');
+  
+  downloadBtn.disabled = (layerSelect.value === '');
+}
+
+function downloadCSV() {
+  const stateSelect = document.getElementById('stateSelect');
+  const layerSelect = document.getElementById('layerSelect');
+  
+  const selectedState = stateSelect.value;
+  const selectedLayerIndex = layerSelect.value;
+  
+  if (selectedState && selectedLayerIndex !== '') {
+    const layer = dataMapping[selectedState][selectedLayerIndex];
+    const url = layer.url;
+    
+    // Open URL in new tab/window
+    window.open(url, '_blank');
+    
+    // Optional: Log for debugging
+    console.log('Downloading:', layer.name);
+    console.log('URL:', url);
+  } else {
+    alert('Please select both state and layer');
+  }
+}
+</script>
+
+</body>
+</html>
