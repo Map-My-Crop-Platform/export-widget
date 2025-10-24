@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDA Agricultural Monitoring System - About</title>
+    <style>
+        body {
+            font-family: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0079c1;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #0079c1;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #005e95;
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #007ac2;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            color: #323232;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0079c1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0079c1;
+            display: block;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .aoi-section {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .aoi-title {
+            color: #0079c1;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #005e95;
+        }
+        .divider {
+            border-top: 2px solid #e9ecef;
+            margin: 30px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .badge-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FDA Agricultural Monitoring System</h1>
+        <p style="font-size: 18px; color: #666; margin-bottom: 25px;"><strong>AI-Powered Detection and Risk Assessment Platform</strong></p>
+
+        <div class="highlight-box">
+            <p><strong>The FDA Agricultural Monitoring System</strong> is an advanced geospatial intelligence platform developed for the U.S. Food and Drug Administration to enhance food safety oversight through automated detection and classification of agricultural facilities across California, Indiana, and Florida.</p>
+            <p style="margin-bottom: 0;">This dashboard integrates satellite imagery analysis, deep learning models, and comprehensive geospatial data to support FDA's food safety mission under the Food Safety Modernization Act (FSMA).</p>
+        </div>
+
+        <h2>Mission & Purpose</h2>
+        
+        <h3>Supporting FDA Food Safety Objectives</h3>
+        <p>This system directly supports:</p>
+        <ul>
+            <li><strong>Produce Safety Rule Compliance</strong> (21 CFR Part 112): Identifying potential contamination sources near produce-growing regions</li>
+            <li><strong>Risk-Based Inspection Planning</strong>: Prioritizing field investigations based on facility proximity and characteristics</li>
+            <li><strong>Waterborne Pathogen Risk Assessment</strong>: Mapping contamination pathways from animal operations to agricultural water systems</li>
+            <li><strong>Preventive Food Safety</strong>: Shifting from reactive response to proactive hazard identification</li>
+        </ul>
+
+        <h3>The Problem We're Solving</h3>
+        <p><strong>Traditional agricultural facility monitoring relies on:</strong></p>
+        <ul>
+            <li>Manual field inspections ($500-$1,000 per facility)</li>
+            <li>Incomplete or outdated facility registries</li>
+            <li>Limited geographic coverage</li>
+            <li>Reactive investigation after contamination events occur</li>
+        </ul>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-value">$0.50-0.79</span>
+                <span class="metric-label">Cost per facility vs. $500-1,000 manual</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">90%+</span>
+                <span class="metric-label">Classification accuracy</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">3 States</span>
+                <span class="metric-label">80+ counties covered</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">&lt;1 sec</span>
+                <span class="metric-label">Processing per facility</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Geographic Coverage & Areas of Interest</h2>
+
+        <div class="aoi-section">
+            <div class="aoi-title">AOI I: California - Salinas Valley Region</div>
+            
+            <h4>Primary Focus Areas</h4>
+            <ul>
+                <li><strong>Salinas Valley Watershed</strong> (HUC-8: 18060005)</li>
+                <li><strong>Statewide Composting Facilities</strong> (All 58 counties)</li>
+            </ul>
+
+            <h4>Detection Objectives</h4>
+            <ul>
+                <li>Grazing farm identification and livestock capacity estimation</li>
+                <li>Registered and unregistered composting facility detection</li>
+                <li>Food safety risk assessment for produce-growing regions</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Why This Region Matters:</strong> The Salinas Valley produces over 70% of U.S. lettuce and leafy greens. Understanding grazing farm proximity and composting facility locations is critical for preventing E. coli and Salmonella contamination pathways that have led to major produce recalls.</p>
+            </div>
+
+            <h4>Key Outputs</h4>
+            <ul>
+                <li>800+ grazing farms detected with estimated livestock capacity</li>
+                <li>350+ composting facilities identified statewide</li>
+                <li>Risk buffer zones mapped around produce-growing areas</li>
+                <li>Pathogen transport pathway analysis through irrigation systems</li>
+            </ul>
+        </div>
+
+        <div class="aoi-section">
+            <div class="aoi-title">AOI II: Indiana - Statewide CAFO Analysis</div>
+            
+            <h4>Primary Focus Areas</h4>
+            <ul>
+                <li><strong>Statewide CAFO Detection</strong> (All 92 counties)</li>
+                <li><strong>Detailed Watershed Analysis</strong> (HUC-10: 0512011117, 0512011118, 0512011119)</li>
+            </ul>
+
+            <h4>Facility Classifications</h4>
+            <div style="margin: 15px 0;">
+                <span class="badge badge-info">Beef Cattle CAFOs</span>
+                <span class="badge badge-info">Dairy Cattle CAFOs</span>
+                <span class="badge badge-info">Swine (Hog) CAFOs</span>
+                <span class="badge badge-info">Poultry CAFOs</span>
+                <span class="badge badge-info">Horse Operations</span>
+                <span class="badge badge-info">Mixed/Other Livestock</span>
+            </div>
+
+            <h4>Key Outputs</h4>
+            <ul>
+                <li><strong>1,782 CAFOs classified</strong> with 90% overall accuracy</li>
+                <li><strong>400+ farm boundaries delineated</strong> in priority watersheds</li>
+                <li>CAFO type-specific risk profiles developed</li>
+                <li>Validation against IDEM facility registry</li>
+            </ul>
+
+            <h4>Technology Highlights</h4>
+            <ul>
+                <li>Deep learning ensemble model (ResNet50, EfficientNet-B3, ConvNeXt-Tiny)</li>
+                <li>NAIP 1-meter resolution imagery analysis</li>
+                <li>Automated classification reducing manual inspection costs by 99%</li>
+            </ul>
+        </div>
+
+        <div class="aoi-section">
+            <div class="aoi-title">AOI III: Florida - Land Use & Pathogen Risk Analysis</div>
+            
+            <h4>Primary Focus Areas</h4>
+            <ul>
+                <li><strong>Statewide CAFO Detection</strong> (All 67 counties)</li>
+                <li><strong>Detailed Watershed Analysis</strong> (HUC-10: 0309020611, 0309020609, 0309020608)</li>
+            </ul>
+
+            <h4>Detection Objectives</h4>
+            <ul>
+                <li>CAFO detection in diverse Florida environments</li>
+                <li>Land use characterization surrounding agricultural operations</li>
+                <li>Urban-agricultural interface analysis</li>
+                <li>Water canal network mapping and connectivity assessment</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Unique Florida Challenges:</strong> Urban/residential encroachment on agricultural lands, complex water canal systems facilitating pathogen transport, diverse land use patterns, and high-density agricultural operations near water systems.</p>
+            </div>
+
+            <h4>Key Outputs</h4>
+            <ul>
+                <li><strong>600+ CAFOs detected</strong> statewide</li>
+                <li><strong>1,204 hectares</strong> of agricultural land characterized in priority watersheds</li>
+                <li><strong>2,746 wastewater facilities</strong> (FDEP WAFR) mapped as potential pathogen sources</li>
+                <li><strong>3,045 EPA NPDES outfall points</strong> integrated for contamination risk</li>
+                <li>Water canal network flow direction and connectivity analysis</li>
+                <li>Urban encroachment mapping with graduated risk buffers (500m, 1km, 2km)</li>
+            </ul>
+
+            <h4>Critical Risk Assessment Components</h4>
+            <ul>
+                <li>Pathogen transport pathway modeling through canal systems</li>
+                <li>Proximity analysis: agricultural lands to wastewater/CAFO facilities</li>
+                <li>Surface water connectivity to produce-growing areas</li>
+                <li>Drinking water source vulnerability assessment</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>AI/ML Technology & Detection Methods</h2>
+
+        <h3>Deep Learning Architecture</h3>
+        <p>Our facility detection system employs state-of-the-art computer vision and deep learning techniques:</p>
+
+        <h4>Model Architectures</h4>
+        <ul>
+            <li><strong>ResNet50</strong>: Baseline classification model providing robust feature extraction</li>
+            <li><strong>EfficientNet-B3</strong>: Optimized for accuracy-efficiency balance</li>
+            <li><strong>ConvNeXt-Tiny</strong>: Modern architecture for enhanced classification performance</li>
+            <li><strong>Ensemble Prediction</strong>: Combines multiple models for superior accuracy and confidence scoring</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4 style="margin-top: 0;">Data Processing Pipeline</h4>
+            <p style="font-family: monospace; font-size: 14px; line-height: 1.8; margin-bottom: 0;">
+                High-Resolution Satellite Imagery (NAIP 1m, Maxar, Sentinel-2)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                Preprocessing & Normalization<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                AI Model Inference (Ensemble)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                Classification & Confidence Scoring<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                Geospatial Integration & Validation<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                Dashboard Visualization
+            </p>
+        </div>
+
+        <h3>Performance Metrics</h3>
+
+        <h4>CAFO Classification (Indiana Model)</h4>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-value">90%</span>
+                <span class="metric-label">Overall Accuracy</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">93%</span>
+                <span class="metric-label">Beef Cattle F1-score</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">91%</span>
+                <span class="metric-label">Dairy Cattle F1-score</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">92%</span>
+                <span class="metric-label">Poultry F1-score</span>
+            </div>
+        </div>
+
+        <h4>Grazing Farm Detection (California)</h4>
+        <ul>
+            <li>Detection Accuracy: <strong>87%</strong></li>
+            <li>Livestock Capacity Estimation: <strong>±15% error margin</strong></li>
+            <li>Processing Speed: <strong>250 farms per hour</strong></li>
+            <li>Coverage: <strong>4,500 sq km</strong> Salinas Valley watershed</li>
+        </ul>
+
+        <h4>Composting Facility Detection (California)</h4>
+        <ul>
+            <li>Registered Facility Detection: <strong>98% accuracy</strong></li>
+            <li>Unregistered Facility Discovery: <strong>120+ previously unknown sites</strong></li>
+            <li>False Positive Rate: <strong>&lt;5%</strong></li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Dashboard Features & Capabilities</h2>
+
+        <h3>Interactive Mapping</h3>
+        <h4>Layer Visualization</h4>
+        <ul>
+            <li>Detected facilities color-coded by type and confidence level</li>
+            <li>Farm boundaries with precise perimeter delineation</li>
+            <li>Watershed boundaries (HUC-8 and HUC-10 levels)</li>
+            <li>Land use/land cover classifications</li>
+            <li>Water infrastructure (canals, outfalls, treatment facilities)</li>
+            <li>Urban/residential areas</li>
+            <li>Risk buffer zones</li>
+        </ul>
+
+        <h4>Map Interactions</h4>
+        <ul>
+            <li>Click facilities for detailed popup information</li>
+            <li>Toggle layers on/off for custom visualization</li>
+            <li>Zoom to specific watersheds or counties</li>
+            <li>Measure distances and areas</li>
+            <li>Draw custom areas of interest</li>
+        </ul>
+
+        <h3>Advanced Filtering & Search</h3>
+        <h4>Filter by:</h4>
+        <ul>
+            <li>State/Region (California, Indiana, Florida)</li>
+            <li>Facility Type (Cattle, Poultry, Dairy, Swine, Grazing, Composting)</li>
+            <li>Detection Confidence Level (High &gt;90%, Medium 75-90%, Low &lt;75%)</li>
+            <li>Watershed (HUC-8/HUC-10)</li>
+            <li>County/Municipality</li>
+            <li>Risk Classification</li>
+        </ul>
+
+        <h3>Analytics & Statistics</h3>
+        <ul>
+            <li><strong>Key Performance Indicators:</strong> Total facilities by type, confidence distribution, geographic summaries</li>
+            <li><strong>Charts & Visualizations:</strong> Facility type distribution, detection confidence breakdown, watershed analysis</li>
+        </ul>
+
+        <h3>Data Export & Reporting</h3>
+        <p><strong>Export Formats:</strong> CSV, Excel, Shapefile, GeoJSON, PDF Maps</p>
+        <p><strong>Use Cases:</strong> Import into FDA GIS systems, offline analysis, statistical analysis, integration with inspection databases, regulatory reporting</p>
+
+        <div class="divider"></div>
+
+        <h2>Data Sources & Validation</h2>
+
+        <h3>Satellite Imagery</h3>
+        <ul>
+            <li><strong>NAIP</strong> (National Agriculture Imagery Program): 1-meter resolution, 4-band (RGB+NIR)</li>
+            <li><strong>Maxar WorldView</strong>: Sub-meter resolution for detailed facility analysis</li>
+            <li><strong>Sentinel-2</strong>: 10-meter resolution for broad coverage and temporal monitoring</li>
+        </ul>
+
+        <h3>Ground Truth & Validation Datasets</h3>
+        <h4>Indiana</h4>
+        <ul>
+            <li>IDEM CAFO Registry: 1,782 regulated facilities</li>
+            <li>Manual labeling: 800 training, 200 validation, 200 testing</li>
+        </ul>
+
+        <h4>California</h4>
+        <ul>
+            <li>California IWMA registered composting facilities</li>
+            <li>USDA Agricultural Census data for grazing operations</li>
+        </ul>
+
+        <h4>Florida</h4>
+        <ul>
+            <li>FDEP facility databases</li>
+            <li>EPA ECHO NPDES permits</li>
+            <li>Florida Water Management Inventory (FLWMI)</li>
+        </ul>
+
+        <h3>Quality Assurance</h3>
+        <h4>Validation Methods</h4>
+        <ul>
+            <li>Cross-reference with government facility registries</li>
+            <li>Field verification sampling (10% of detections)</li>
+            <li>Expert review of high-confidence detections</li>
+            <li>Temporal consistency checks using multi-date imagery</li>
+        </ul>
+
+        <h4>Confidence Scoring</h4>
+        <ul>
+            <li><span class="badge badge-success">High Confidence (&gt;90%)</span> Model ensemble agreement + ground truth validation</li>
+            <li><span class="badge badge-warning">Medium Confidence (75-90%)</span> Model agreement with some uncertainty</li>
+            <li><span class="badge badge-warning">Low Confidence (&lt;75%)</span> Requires field verification</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Applications & Use Cases</h2>
+
+        <h3>Food Safety Inspection Planning</h3>
+        <h4>Risk-Based Inspection Prioritization</h4>
+        <ol>
+            <li>Identify high-risk facilities near produce-growing regions</li>
+            <li>Map contamination pathways through water systems</li>
+            <li>Prioritize inspections based on proximity analysis</li>
+            <li>Optimize field investigator routing and scheduling</li>
+        </ol>
+
+        <h4>Outbreak Investigation</h4>
+        <ul>
+            <li>Rapid identification of potential contamination sources</li>
+            <li>Spatial analysis of facilities within outbreak zones</li>
+            <li>Historical facility detection for timeline reconstruction</li>
+            <li>Network analysis of shared water systems</li>
+        </ul>
+
+        <h3>Regulatory Compliance & Monitoring</h3>
+        <h4>Facility Inventory Management</h4>
+        <ul>
+            <li>Cross-reference detected facilities with registration databases</li>
+            <li>Identify unregistered or unpermitted operations</li>
+            <li>Track new facility construction and expansion</li>
+            <li>Monitor facility closures and abandonment</li>
+        </ul>
+
+        <h4>Environmental Impact Assessment</h4>
+        <ul>
+            <li>Buffer zone compliance verification</li>
+            <li>Proximity to sensitive water resources</li>
+            <li>Urban encroachment monitoring</li>
+            <li>Cumulative impact analysis</li>
+        </ul>
+
+        <h3>Research & Policy Development</h3>
+        <ul>
+            <li>Correlate facility density with foodborne illness rates</li>
+            <li>Identify geographic risk patterns</li>
+            <li>Evaluate effectiveness of buffer zone regulations</li>
+            <li>Support evidence-based policy decisions</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Model Limitations & Considerations</h2>
+
+        <div class="warning-box">
+            <h3 style="margin-top: 0;">Technical Limitations</h3>
+            <h4>Imagery Constraints</h4>
+            <ul>
+                <li>Cloud cover may obscure facilities in optical imagery</li>
+                <li>Temporal gaps between imagery updates (2-3 years for NAIP)</li>
+                <li>Seasonal variations in facility appearance</li>
+                <li>Resolution limits for small operations</li>
+            </ul>
+
+            <h4>Classification Challenges</h4>
+            <ul>
+                <li>Mixed-use facilities may be misclassified</li>
+                <li>Horse operations have lower detection accuracy (75%)</li>
+                <li>Abandoned facilities may be incorrectly included</li>
+                <li>New construction not yet captured in imagery</li>
+            </ul>
+
+            <h4>Geographic Limitations</h4>
+            <ul>
+                <li>Models trained on specific states may need retraining for new regions</li>
+                <li>Urban areas with dense development create detection challenges</li>
+                <li>Forested areas may obscure smaller facilities</li>
+            </ul>
+        </div>
+
+        <h3>Validation Requirements</h3>
+        <div class="info-box">
+            <p><strong>FDA Guidance:</strong> All AI/ML detections should be validated before regulatory action. High-confidence detections (&gt;90%) have lowest verification priority. Medium and low-confidence detections require field confirmation.</p>
+        </div>
+
+        <h4>Recommended Validation Protocol</h4>
+        <ol>
+            <li>Desktop review using high-resolution imagery and street view</li>
+            <li>Cross-reference with local/county records</li>
+            <li>Field verification for medium/low confidence detections</li>
+            <li>Update model training data with confirmed results</li>
+        </ol>
+
+        <div class="divider"></div>
+
+        <h2>Disclaimer & Data Usage</h2>
+
+        <div class="warning-box">
+            <h3 style="margin-top: 0;">Data Accuracy Statement</h3>
+            <p>The facility detections displayed in this dashboard are derived from AI/ML models trained on satellite imagery and validated against available ground truth data. While these models achieve high accuracy rates (90%+), <strong>all detections should be validated before use in regulatory enforcement actions</strong>.</p>
+        </div>
+
+        <h3>Appropriate Use Cases</h3>
+        <h4>Recommended Uses</h4>
+        <ul>
+            <li>Risk-based inspection planning and prioritization</li>
+            <li>Spatial analysis and pattern identification</li>
+            <li>Research and policy development</li>
+            <li>Facility inventory management</li>
+            <li>Outbreak investigation support</li>
+        </ul>
+
+        <h4>Not Recommended for</h4>
+        <ul>
+            <li>Sole basis for regulatory enforcement actions</li>
+            <li>Legal proceedings without field verification</li>
+            <li>Definitive facility counts without validation</li>
+            <li>Real-time outbreak response (imagery has temporal lag)</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Acknowledgments & Credits</h2>
+
+        <h3>Developed by</h3>
+        <p><strong>MapMyCrop</strong> in collaboration with <strong>U.S. Food and Drug Administration</strong></p>
+
+        <h3>Data Providers</h3>
+        <ul>
+            <li>USDA NAIP for high-resolution aerial imagery</li>
+            <li>U.S. EPA for environmental facility data</li>
+            <li>State environmental agencies (IDEM, FDEP, CalEPA)</li>
+            <li>County agricultural commissioners and planning departments</li>
+        </ul>
+
+        <h3>Technology Partners</h3>
+        <ul>
+            <li>Esri (ArcGIS platform)</li>
+            <li>Amazon Web Services (cloud infrastructure)</li>
+            <li>Google Earth Engine (imagery processing)</li>
+            <li>Maxar (high-resolution satellite imagery)</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Contact Information</h2>
+
+        <p><strong>MapMyCrop</strong><br>
+        Email: info@mapmycrop.com<br>
+        Web: www.mapmycrop.com</p>
+
+        <p><strong>Technical Support</strong><br>
+        Email: fda-monitoring-support@mapmycrop.com</p>
+
+        <p><strong>FDA Partnership</strong><br>
+        U.S. Food and Drug Administration<br>
+        Center for Food Safety and Applied Nutrition (CFSAN)<br>
+        Web: www.fda.gov/food</p>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e9ecef; text-align: center; color: #666; font-size: 14px;">
+            <p><strong>Document Version:</strong> 1.0 | <strong>Last Updated:</strong> October 2025</p>
+            <p style="font-style: italic; margin-top: 10px;">This dashboard represents a collaborative effort between MapMyCrop and the U.S. Food and Drug Administration to advance food safety through innovative geospatial intelligence and artificial intelligence technologies.</p>
+        </div>
+    </div>
+</body>
+</html>
